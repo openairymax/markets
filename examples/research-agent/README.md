@@ -56,6 +56,6 @@ Airymax research-agent — 资料搜集
 
 - 与 `airymax_agents` 组合：给 `get_agent("coding", syscall_proxy=proxy)`
   注入 `SyscallProxy`，Agent 即可在 LLM 回路中自动调用 `web_search` /
-  `web_fetch`（工具 schema 见 `agents/airymax_agents/base.py` 的
-  `BUILTIN_TOOL_SCHEMAS`）。
+  `web_fetch`（工具 schema 由 tool_d 的 `list_tools` 目录在运行期生成，
+  见 `agents/airymax_agents/base.py` 的 `_register_builtin_tools`）。
 - 换用 `web_fetch` 对指定 URL 抓正文：`proxy.tool_execute("web_fetch", {"url": ...})`。
